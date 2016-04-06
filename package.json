@@ -1,0 +1,25 @@
+{
+  "name": "meteor-redux-demo",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "lodash": "^4.11.1",
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.2.2",
+    "redux": "^3.4.0",
+    "redux-form": "^5.0.1",
+    "redux-thunk": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.0.2",
+    "eslint": "^2.7.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-config-shakacode": "^4.0.0",
+    "eslint-plugin-react": "^4.2.3"
+  }
+}

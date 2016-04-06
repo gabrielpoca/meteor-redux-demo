@@ -1,0 +1,23 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "rules": {
+    "id-length": [2, {
+      "exceptions": ["_"]
+    }],
+    "arrow-body-style": 0,
+    "camelcase": 0,
+    "consistent-return": 0,
+    "curly": 0,
+    "func-names": 0,
+    "new-cap": 0,
+    "no-param-reassign": 0,
+    "prefer-arrow-callback": 0,
+    "space-before-function-paren": 0,
+    "react/no-multi-comp": [2, {
+      "ignoreStateless": true
+    }],
+    "react/prefer-stateless-function": 0,
+    "react/jsx-no-bind": 0
+  }
+}
