@@ -8,6 +8,14 @@ const createMessage = function(params) {
   Messages.insert(params);
 };
 
+const removeMessage = function(_id) {
+  if (!_id)
+    throw new Meteor.Error('id missing', 'An id is needed to remove a message');
+
+  Messages.remove({ _id });
+};
+
 Meteor.methods({
   createMessage,
+  removeMessage,
 });

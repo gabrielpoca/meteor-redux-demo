@@ -1,14 +1,6 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-
-const messagesReducer = (state = [], action) => {
-  switch (action.type) {
-    case 'SET_MESSAGES':
-      return action.messages;
-    default:
-      return state;
-  }
-};
+import { mongo } from 'meteor-ditto';
 
 const errorsReducer = (state = [], action) => {
   switch (action.type) {
@@ -20,7 +12,7 @@ const errorsReducer = (state = [], action) => {
 };
 
 export default combineReducers({
-  messages: messagesReducer,
   errors: errorsReducer,
   form: formReducer,
+  mongo,
 });

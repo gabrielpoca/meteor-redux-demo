@@ -12,3 +12,9 @@ export const createMessage = params => {
     });
   };
 };
+
+export const removeMessage = id => {
+  return () => {
+    Meteor.call('removeMessage', id);
+  };
+};

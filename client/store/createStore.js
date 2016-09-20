@@ -1,19 +1,17 @@
-import { Tracker } from 'meteor/tracker';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
+import { connect as connectCollection } from 'meteor-ditto';
 import reducers from '../reducers/reducers';
 import Messages from '../../lib/messages';
 
 export default () => {
-  const store = createStore(reducers, applyMiddleware(thunk));
+  const store = createStore(reducers, compose(
+    applyMiddleware(thunk),
+    window.devToolsExtension ? window.devToolsExtension() : fn => fn,
+  ));
 
-  Tracker.autorun(() => {
-    store.dispatch({
-      type: 'SET_MESSAGES',
-      messages: Messages.find().fetch(),
-    });
-  });
+  connectCollection(Messages, store);
 
   return store;
 };
