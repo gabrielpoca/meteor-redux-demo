@@ -9,7 +9,7 @@ class MessagesEditor extends Component {
 
     return (
       <form onSubmit={handleSubmit}>
-        <input {...text} />
+        <input value={text.value} onChange={text.onChange} />
         <button type="submit">Create</button>
       </form>
     );
